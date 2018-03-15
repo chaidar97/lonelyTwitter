@@ -9,10 +9,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Date;
+//import java.util.Date;  --> Disabled unused import
 
 import android.app.Activity;
-import android.content.Context;
+//import android.content.Context; --> Disabled unused import
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 
 public class LonelyTwitterActivity extends Activity {
 
-	private LonelyTwitterActivity activity = this;
+	private final LonelyTwitterActivity activity = this; 	// Set this variable to final
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
@@ -48,7 +48,7 @@ public class LonelyTwitterActivity extends Activity {
 
 			public void onClick(View v) {
 				setResult(RESULT_OK);
-				String text = bodyText.getText().toString();
+				// String text = bodyText.getText().toString(); ---> Removed this, it's never used
 				tweetList.clear();
 				adapter.notifyDataSetChanged();
 				saveInFile();
@@ -87,7 +87,8 @@ public class LonelyTwitterActivity extends Activity {
 	}
 
 
-	public void loadFromFile() {
+	// Changed method to Private
+	private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
 			BufferedReader in = new BufferedReader(new InputStreamReader(fis));

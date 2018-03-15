@@ -7,7 +7,7 @@ import android.widget.ListView;
 
 import com.robotium.solo.Solo;
 
-import junit.framework.TestCase;
+//import junit.framework.TestCase; --> Disabled unused import
 
 public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 {
     private Solo solo;
@@ -17,6 +17,7 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 
     }
 
     public void setUp() throws Exception{
+        super.setUp();
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
@@ -55,6 +56,7 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 
 
     @Override
     public void tearDown() throws Exception{
+        super.tearDown();
         solo.finishOpenedActivities();
     }
 }

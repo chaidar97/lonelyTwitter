@@ -2,7 +2,7 @@ package ca.ualberta.cs.lonelytwitter;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextWatcher;
+//import android.text.TextWatcher; --> Disabled unused import
 import android.widget.TextView;
 
 public class EditTweet extends Activity {
